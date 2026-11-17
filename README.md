@@ -1,18 +1,32 @@
 ﻿# Shmal El-Hejaz — Pricing & Design System Snippets (`SHMAL-ELHEJAZ`)
 
-A frontend UI/design-system archive containing Tailwind CSS design tokens (`INDEX.CSS`), component animation styles (`CARD CSS`), and a React/TypeScript Arabic subscription pricing page (`JAVA SCRIPT`) for tiered plans (Silver, Gold, Diamond).
+## Table of Contents
+- [Executive Summary & Business Utility](#executive-summary--business-utility)
+- [System Architecture & Layers](#system-architecture--layers)
+- [Application Modules](#application-modules)
+- [Business Value, ROI & Growth Opportunities](#business-value-roi--growth-opportunities)
 
 ---
 
-## 1. Executive Summary & Purpose
-`SHMAL-ELHEJAZ` preserves reusable styling tokens and an interactive Arabic-language SaaS/service pricing interface (`Index` component with `PricingCard`, `ComparisonTable`, `Testimonials`, and `UpgradeModal`).
+## Executive Summary & Business Utility
+`SHMAL-ELHEJAZ` is a reusable frontend UI & design-system archive containing Tailwind CSS HSL design tokens (`INDEX.CSS`), component hover/spin keyframes (`CARD CSS`), and a React/TypeScript Arabic subscription pricing screen (`JAVA SCRIPT`) supporting **Silver**, **Gold**, and **Diamond** tiers with interactive upgrade modal triggers (`UpgradeModal`) and localized toast confirmations.
 
-## 2. Architectural Layers & Files
-| File | Layer / Role | Details |
+---
+
+## System Architecture & Layers
+| Layer | File | Responsibility |
 | :--- | :--- | :--- |
-| `INDEX.CSS` | **Design Tokens Layer** | Tailwind `@layer base` HSL CSS variables (`--background`, `--card`, `--primary`, `--popover`) |
-| `CARD CSS` | **Component Styles Layer** | Container layout (`#root`), hover filter transitions, and keyframe animations |
-| `JAVA SCRIPT` | **React UI Layer** | TSX component implementing Silver/Gold/Diamond tier selection, upgrade modal trigger, and Arabic toast notifications (`useToast`) |
+| **Design Tokens Layer** | `INDEX.CSS` | Tailwind `@layer base` HSL CSS variables (`--background`, `--foreground`, `--card`, `--primary`, `--popover`) |
+| **Animation & Layout CSS** | `CARD CSS` | `#root` container grid, `.logo` filter hover transitions, and `@keyframes logo-spin` |
+| **React Pricing UI Layer** | `JAVA SCRIPT` | `Index` component integrating `Header`, `PricingCard`, `ComparisonTable`, `Testimonials`, `UpgradeModal`, and `useToast` |
 
-## 3. Business Value & Growth Opportunities
-- **Drop-In Pricing Funnel**: Ready to be integrated into any Next.js/Vite Arabic SaaS or agency platform (e.g., `shamalelhejaz`) to drive tiered subscription upgrades with automated modal upsells for lower tiers.
+---
+
+## Application Modules
+- **Tier Selection Handler (`handleSelectPlan`)**: Triggers an automatic `UpgradeModal` upsell when selecting the `silver` tier, and displays localized Arabic confirmation toasts for `gold` and `diamond` plans.
+
+---
+
+## Business Value, ROI & Growth Opportunities
+- **Conversion-Optimized Upsell Funnel**: Built-in modal upsell logic nudges entry-tier (`silver`) buyers toward higher-ARPU `gold`/`diamond` plans.
+- **Drop-In SaaS Module**: Ready to plug directly into `shamalelhejaz` or other Arabic SaaS/marketplace storefronts.
